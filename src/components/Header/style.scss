@@ -1,0 +1,11 @@
+.header {
+  @include toRem(height, 64);
+  @include paddingVertical(16, 16);
+  @include flexCenter;
+
+  background: $RED;
+
+  &__logo {
+    height: 100%;
+  }
+}

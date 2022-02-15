@@ -32,6 +32,17 @@ $BREAKPOINT-MOBILE-LAND: "only screnn and (min-width: 480px)";
   #{$property}: ($value / 16) + rem;
 }
 
+@mixin paddingVertical($top, $bottom) {
+  padding-top: ($top / 16) + rem;
+  padding-bottom: ($bottom / 16) + rem;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin margin-page {
   width: calc(100% - 2.5rem);
   margin: 0 auto;
