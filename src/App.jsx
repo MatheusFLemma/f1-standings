@@ -48,7 +48,7 @@ function App() {
 
   const getDriver = async () => {
     const driverArray = [];
-    const res = await api.get("/2021/driverStandings.json");
+    const res = await api.get("/current/driverStandings.json");
     const result =
       res.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
 
