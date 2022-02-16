@@ -55,6 +55,18 @@ $BREAKPOINT-MOBILE-LAND: "only screnn and (min-width: 480px)";
   justify-content: center;
 }
 
+@mixin flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin gridConstructors {
+  display: grid;
+  grid-template-columns: 2rem 1fr 5rem;
+  align-items: center;
+}
+
 @mixin margin-page {
   width: calc(100% - 2.5rem);
   margin: 0 auto;

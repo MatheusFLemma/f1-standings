@@ -21,6 +21,22 @@ div.App {
   height: 100vh;
 }
 
+table {
+  @include toRem(width, 300);
+
+}
+
+tbody,
+thead {
+  display: block;
+}
+
+tbody {
+  @include toRem(height, 504);
+
+  overflow-y: scroll;
+}
+
 p,
 table,
 tbody,

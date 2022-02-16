@@ -8,14 +8,17 @@ import { api } from "./services/api";
 import { Header } from "./components/Header";
 import { LastResult } from "./components/LastResult";
 import { Drivers } from "./components/Drivers";
+import { Constructors } from "./components/Teams";
 
 function App() {
   const [result, setResult] = useState([]);
   const [drivers, setDrivers] = useState([]);
+  const [constructors, setConstructors] = useState([]);
 
   useEffect(() => {
     getLastResults();
     getDriver();
+    getConstructors();
   }, []);
 
   const getLastResults = async () => {
@@ -36,7 +39,7 @@ function App() {
               </p>
             </>
           ),
-          Card: r.Constructor.name,
+          Car: r.Constructor.name,
           Pts: <div className="data__center">{r.points}</div>,
         });
       }
@@ -65,11 +68,34 @@ function App() {
               </p>
             </>
           ),
-          Card: d.Constructors[0].name,
+          Car: d.Constructors[0].name,
           Pts: <div className="data__center">{d.points}</div>,
         });
       }
       setDrivers(driverArray);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getConstructors = async () => {
+    const constructorsArray = [];
+    const res = await api.get("/current/constructorStandings.json");
+    const result =
+      res.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
+
+    console.log(result);
+
+    try {
+      for (let d of result) {
+        constructorsArray.push({
+          Pos: <div className="data__center">{d.position}</div>,
+          Team: <div className="data__center">{d.Constructor.name}</div>,
+          Pts: <div className="data__center">{d.points}</div>,
+        });
+      }
+      setConstructors(constructorsArray);
+      console.log(constructors);
     } catch (error) {
       console.log(error);
     }
@@ -81,6 +107,7 @@ function App() {
       <div className="container">
         <LastResult data={result} />
         <Drivers data={drivers} />
+        <Constructors data={constructors} />
       </div>
     </div>
   );
