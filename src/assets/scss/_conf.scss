@@ -37,8 +37,20 @@ $BREAKPOINT-MOBILE-LAND: "only screnn and (min-width: 480px)";
   padding-bottom: ($bottom / 16) + rem;
 }
 
+@mixin paddingHorizontal($left, $right) {
+  padding-left: ($left / 16) + rem;
+  padding-right: ($right / 16) + rem;
+}
+
 @mixin flexCenter {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }

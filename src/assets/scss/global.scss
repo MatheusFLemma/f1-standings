@@ -14,3 +14,37 @@ body {
   color: $LIGHT;
   background: $DARK;
 }
+
+body,
+div#root,
+div.App {
+  height: 100vh;
+}
+
+p,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.container {
+  @include margin-page;
+  @include paddingHorizontal(16, 16);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: calc(100% - 4rem);
+}
+
+.data__center {
+  text-align: center;
+}
