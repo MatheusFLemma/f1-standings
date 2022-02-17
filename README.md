@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">
-  <img src="public/screenshot-localhost_3000-2022.02.17-14_17_04.png" width="900" height="200" style="object-fit: cover; object-position: top;" alt="Foto do projeto F1 Standings">
+  <img src="public/screenshot-localhost_3000-2022.02.17-14_17_04.png" width="600" height="200" style="object-fit: cover; object-position: top;" alt="Foto do projeto F1 Standings">
 </h1>
 
 <h3 align="center">Tabela F1</h3>
