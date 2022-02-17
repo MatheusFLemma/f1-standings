@@ -5,11 +5,11 @@ export function LastResult({ data }) {
     <section className="last-result">
       <h2 className="last-result__title">F1 Last Result</h2>
       <table className="last-result__table">
-        <thead>
-          <tr className="last-result__head">
+        <thead className="last-result__header">
+          <tr>
             {data[0] &&
               columns.map((heading) => (
-                <th key={heading} className="last-result__heading">
+                <th key={heading} className="last-result__table--heading">
                   {heading}
                 </th>
               ))}
@@ -18,9 +18,9 @@ export function LastResult({ data }) {
 
         <tbody className="last-result__body">
           {data.map((row) => (
-            <tr key={Math.random()} className="last-result__body-row">
+            <tr key={Math.random()} className="last-result__body--row">
               {columns.map((column) => (
-                <td key={Math.random()} className="last-result__body-data">
+                <td key={Math.random()} className="last-result__body--data">
                   {row[column]}
                 </td>
               ))}

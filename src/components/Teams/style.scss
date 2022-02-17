@@ -1,43 +1,58 @@
 .constructors {
   @include flexColumn;
 
+  color: #fefefe;
+
+  &__title {
+    @include toRem(font-size, 28);
+
+    text-align: center;
+    font-weight: bold;
+  }
+
   &__table {
-    @include paddingHorizontal(8, 8);
-    @include paddingVertical(8, 16);
+    @include toRem(font-size, 12);
     @include toRem(border-radius, 20);
+    @include toRem(width, 299);
+    @include toRem(height, 504);
 
-    background: $LIGHT-DARK;
-    box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.4);
+    background: #1f1f27;
+    border-collapse: collapse;
+    border-spacing: 0;
   }
 
-  &__head {
-    @include gridConstructors;
-
-    width: 100%;
+  &__header {
+    display: block;
   }
 
-  &__heading {
-    @include paddingHorizontal(8, 8);
+  &__table--heading {
+    @include toRem(font-size, 16);
+    @include toRem(width, 108);
+    @include paddingHorizontal(14, 14);
+
+    font-weight: bold;
   }
 
   &__body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
+
+    @include toRem(height, 504);
+
+    & > tr:nth-child(odd) {
+      background: #1c1c24;
+    }
+
+    &--row {
+      width: 100%;
+      display: inline-block;
+    }
+
+    &--data {
+      @include toRem(width, 108);
+    }
   }
 
-  &__body-row {
-    @include gridConstructors;
-
-    width: 100%;
-  }
-
-  &__body-data {
-    @include toRem(font-size, 12);
-    @include toRem(line-height, 12);
-    @include paddingHorizontal(8, 8);
-    @include paddingVertical(4, 4);
-
-    vertical-align: middle;
+  .centered {
+    text-align: center;
   }
 }

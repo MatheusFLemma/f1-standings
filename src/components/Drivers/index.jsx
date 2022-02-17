@@ -5,11 +5,11 @@ export function Drivers({ data }) {
     <section className="drivers">
       <h2 className="drivers__title">F1 Drivers 2021</h2>
       <table className="drivers__table">
-        <thead>
-          <tr className="drivers__head">
+        <thead className="drivers__header">
+          <tr>
             {data[0] &&
               columns.map((heading) => (
-                <th key={heading} className="drivers__heading">
+                <th key={heading} className="drivers__table--heading">
                   {heading}
                 </th>
               ))}
@@ -18,9 +18,9 @@ export function Drivers({ data }) {
 
         <tbody className="drivers__body">
           {data.map((row) => (
-            <tr key={Math.random()} className="drivers__body-row">
+            <tr key={Math.random()} className="drivers__body--row">
               {columns.map((column) => (
-                <td key={Math.random()} className="drivers__body-data">
+                <td key={Math.random()} className="drivers__body--data">
                   {row[column]}
                 </td>
               ))}

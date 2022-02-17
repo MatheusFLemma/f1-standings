@@ -5,11 +5,11 @@ export function Constructors({ data }) {
     <section className="constructors">
       <h2 className="constructors__title">F1 Constructors 2021</h2>
       <table className="constructors__table">
-        <thead>
-          <tr className="constructors__head">
+        <thead className="constructors__header">
+          <tr>
             {data[0] &&
               columns.map((heading) => (
-                <th key={heading} className="constructors__heading">
+                <th key={heading} className="constructors__table--heading">
                   {heading}
                 </th>
               ))}
@@ -18,9 +18,9 @@ export function Constructors({ data }) {
 
         <tbody className="constructors__body">
           {data.map((row) => (
-            <tr key={Math.random()} className="constructors__body-row">
+            <tr key={Math.random()}>
               {columns.map((column) => (
-                <td key={Math.random()} className="constructors__body-data">
+                <td key={Math.random()} className="constructors__body--data">
                   {row[column]}
                 </td>
               ))}

@@ -29,8 +29,8 @@ function App() {
     try {
       for (let r of result) {
         resultArray.push({
-          Pos: <div className="data__center">{r.position}</div>,
-          Nº: <div className="data__center">{r.number}</div>,
+          Pos: <div className="centered">{r.position}</div>,
+          Nº: <div className="centered">{r.number}</div>,
           Driver: (
             <>
               {r.Driver.givenName}
@@ -40,7 +40,7 @@ function App() {
             </>
           ),
           Car: r.Constructor.name,
-          Pts: <div className="data__center">{r.points}</div>,
+          Pts: <div className="centered">{r.points}</div>,
         });
       }
       setResult(resultArray);
@@ -58,18 +58,16 @@ function App() {
     try {
       for (let d of result) {
         driverArray.push({
-          Pos: <div className="data__center">{d.position}</div>,
-          Nº: <div className="data__center">{d.Driver.permanentNumber}</div>,
+          Pos: <div className="centered">{d.position}</div>,
+          Nº: <div className="centered">{d.Driver.permanentNumber}</div>,
           Driver: (
             <>
-              {d.Driver.givenName}
-              <p>
-                <strong>{d.Driver.familyName}</strong>
-              </p>
+              <p>{d.Driver.givenName}</p>
+              <strong>{d.Driver.familyName}</strong>
             </>
           ),
-          Car: d.Constructors[0].name,
-          Pts: <div className="data__center">{d.points}</div>,
+          Car: <div className="centered">{d.Constructors[0].name}</div>,
+          Pts: <div className="centered">{d.points}</div>,
         });
       }
       setDrivers(driverArray);
@@ -84,18 +82,15 @@ function App() {
     const result =
       res.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
 
-    console.log(result);
-
     try {
       for (let d of result) {
         constructorsArray.push({
-          Pos: <div className="data__center">{d.position}</div>,
-          Team: <div className="data__center">{d.Constructor.name}</div>,
-          Pts: <div className="data__center">{d.points}</div>,
+          Pos: <div className="centered">{d.position}</div>,
+          Team: d.Constructor.name,
+          Pts: <div className="centered">{d.points}</div>,
         });
       }
       setConstructors(constructorsArray);
-      console.log(constructors);
     } catch (error) {
       console.log(error);
     }
@@ -104,11 +99,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="container">
+      <main className="container">
         <LastResult data={result} />
         <Drivers data={drivers} />
         <Constructors data={constructors} />
-      </div>
+      </main>
     </div>
   );
 }

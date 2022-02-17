@@ -17,10 +17,10 @@ $LIGHT-DARK: #1f1f27;
 
 // Usage example: @media #{$BREAKPOINT-DESK}
 
-$BREAKPOINT-DESK: "only screnn and (min-width: 1280px)";
-$BREAKPOINT-TABLET-LAND: "only screnn and (min-width: 975px)";
-$BREAKPOINT-TABLET: "only screnn and (min-width: 600px)";
-$BREAKPOINT-MOBILE-LAND: "only screnn and (min-width: 480px)";
+$BREAKPOINT-DESK: "(min-width: 1280px)";
+$BREAKPOINT-TABLET-LAND: "(min-width: 975px)";
+$BREAKPOINT-TABLET: "(min-width: 600px)";
+$BREAKPOINT-MOBILE-LAND: "(min-width: 480px)";
 
 /*
 |-------------------------------------------------------------------------------
@@ -42,6 +42,10 @@ $BREAKPOINT-MOBILE-LAND: "only screnn and (min-width: 480px)";
   padding-right: ($right / 16) + rem;
 }
 
+@mixin marginCenter {
+  margin: 0 auto;
+}
+
 @mixin flexCenter {
   display: flex;
   align-items: center;
@@ -61,17 +65,25 @@ $BREAKPOINT-MOBILE-LAND: "only screnn and (min-width: 480px)";
   justify-content: space-between;
 }
 
-@mixin gridConstructors {
+@mixin containerGrid {
   display: grid;
-  grid-template-columns: 2rem 1fr 5rem;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-@mixin margin-page {
+@mixin marginPage {
+  @include marginCenter;
+  @include paddingVertical(16, 16);
+
   width: calc(100% - 2.5rem);
-  margin: 0 auto;
+
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    @include containerGrid;
+
+    width: calc(100% - 4rem);
+  }
 
   @media #{$BREAKPOINT-DESK} {
     max-width: 1000px;
+    height: calc(100% - 4rem);
   }
 }
