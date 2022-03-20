@@ -3,7 +3,7 @@ export function Constructors({ data }) {
 
   return (
     <section className="constructors">
-      <h2 className="constructors__title">F1 Constructors 2021</h2>
+      <h2 className="constructors__title">F1 Constructors 2022</h2>
       <table className="constructors__table">
         <thead className="constructors__header">
           <tr>
