@@ -3,7 +3,7 @@ export function Drivers({ data }) {
 
   return (
     <section className="drivers">
-      <h2 className="drivers__title">F1 Drivers 2021</h2>
+      <h2 className="drivers__title">F1 Drivers 2022</h2>
       <table className="drivers__table">
         <thead className="drivers__header">
           <tr>
