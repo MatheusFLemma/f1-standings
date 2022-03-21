@@ -1,7 +1,7 @@
 <p align="center">
   <img alt="Tecnologias" src="https://img.shields.io/static/v1?label=tecnologias&message=5&color=e2e2e2&style=for-the-badge" />&nbsp;
   <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/MatheusFLemma/f1-standings?style=for-the-badge" />&nbsp;
-  <img alt="Último commit do repositório" src="https://img.shields.io/github/last-commit/MatheusFLemma/convert-case?style=for-the-badge" />&nbsp;
+  <img alt="Último commit do repositório" src="https://img.shields.io/github/last-commit/MatheusFLemma/f1-standings?style=for-the-badge" />&nbsp;
 </p>
 
 <h1 align="center">
